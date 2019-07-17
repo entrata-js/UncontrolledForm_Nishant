@@ -1,12 +1,7 @@
 import React from "react";
 
 class UncontrolledForm extends React.Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     alert(`
     firstName: ${this.firstName.value}
@@ -14,7 +9,8 @@ class UncontrolledForm extends React.Component {
     email: ${this.email.value}
     phone: ${this.pnum.value}
     `);
-  }
+  };
+
   render() {
     return (
       <div>
@@ -27,9 +23,6 @@ class UncontrolledForm extends React.Component {
             }}
           />
 
-          <br />
-          <br />
-
           <label>Last Name</label>
           <input
             type="text"
@@ -37,9 +30,6 @@ class UncontrolledForm extends React.Component {
               this.lastName = input;
             }}
           />
-
-          <br />
-          <br />
 
           <label>Email</label>
           <input
@@ -49,9 +39,6 @@ class UncontrolledForm extends React.Component {
             }}
           />
 
-          <br />
-          <br />
-
           <label>Phone Number</label>
           <input
             type="text"
@@ -59,9 +46,6 @@ class UncontrolledForm extends React.Component {
               this.pnum = input;
             }}
           />
-
-          <br />
-          <br />
 
           <button className="btn">Submit</button>
         </form>
